@@ -1,94 +1,105 @@
 #include<iostream>
 using namespace std;
-class a 
-{
-int x=0,m[100],i;
-float per;
-public:
-void getp1();
+// data for 1st student
+class std1{
+	float sub,tm;
+	float marks[10];
+	public: 
+    void getp1();
+	friend void compare();
+}s1;
 
-	friend void company();	
-}a1;
-void a::getp1()
+void std1::getp1()
 {
-	cout<<"\n enter the marks of the subjects";
+	float per;
+    cout<<"\n enter the marks of First student ";
+	int i=0;
 	for(i=1;i<=5;i++)
 	{
 		cout<<"\n sub"<<i<<":";
-		cin>>m[i];
+		cin>>marks[i];
+		tm+=marks[i];
 	}
-	for(i=1;i<=5;i++)
-	{
-		x=x+m[i];
-	}
-	per=(x/500)*100;
-	cout<<"\n percentage:"<<per;
-	}
-class b
-{
-	int x=0,m[100],i,per;
-public:
-void getp2();
+	
+	per=(tm/500)*100;
+	cout<<"Your percentage is : "<<per << endl;
+}
+// data for student 2
 
-	friend void company();
-}b1;
-void b::getp2()
+
+class std2{
+	float sub,tm;
+	float marks[10];
+	public: 
+    void getp2();
+	friend void compare();
+}s2;
+
+void std2::getp2()
 {
-	cout<<"\n enter the marks of the subjects";
+	float per;
+	cout<<"\n enter the marks of the second student";
+	int i=0;
 	for(i=1;i<=5;i++)
 	{
 		cout<<"\n sub"<<i<<":";
-		cin>>m[i];
+		cin>>marks[i];
+		tm+=marks[i];
 	}
-	for(i=1;i<=5;i++)
-	{
-		x=x+m[i];
-	}
-	per=(x/500)*100;
-	cout<<"\n percentage:"<<x;
-	}
-class c
-{
-int x=0,m[100],i,per;
-public:
-void getp3();
+	
+	per=(tm/500)*100;
+	cout<<"Your percentage is : "<<per <<endl;
+}
 
-	friend void company();
-}c1;
-void c::getp3()
+// data for student 3
+
+
+class std3{
+	float sub,tm;
+	float marks[10];
+	public: 
+    void getp3();
+	friend void compare();
+}s3;
+
+void std3::getp3()
 {
-	cout<<"\n enter the marks of the subjects";
+	float per;
+	cout<<"\n enter the marks of the second student";
+	int i=0;
 	for(i=1;i<=5;i++)
 	{
 		cout<<"\n sub"<<i<<":";
-		cin>>m[i];
+		cin>>marks[i];
+		tm+=marks[i];
 	}
-	for(i=1;i<=5;i++)
-	{
-		x=x+m[i];
-	}
-	per=(x/500)*100;
-	cout<<"\n percentage:"<<per;
-	}
-void company()
+	
+	per=(tm/500)*100;
+	cout<<"Your percentage is : "<<per <<endl;
+}
+
+// compare function
+void compare()
 {
-	if(a1.x>b1.x&&a1.x>c1.x)
+	if(s1.tm>s2.tm&&s1.tm>s3.tm)
 	{
-		cout<<"\n pass "<<a1.x;
+		cout<<"\n Student 1 passed !";
 	}
-		if(b1.x>a1.x&&b1.x>c1.x)
+    else if(s2.tm>s1.tm&&s2.tm>s3.tm)
 	{
-		cout<<"\n pass "<<b1.x;
+		cout<<"\n Student 2 passed !";
 	}
-		if(c1.x>a1.x&&c1.x>b1.x)
+	else if(s3.tm>s1.tm&&s3.tm>s2.tm)
 	{
-		cout<<"\n pass"<<c1.x;
+		cout<<"\n Student 3 passed ! ";
 	}
 }
-main()
-{
-a1.getp1();
-b1.getp2();
-c1.getp3();
-company();	
-}
+
+
+	main(){
+        	s1.getp1();
+        	s2.getp2();
+        	s3.getp3();
+        	compare();
+		}
+       
